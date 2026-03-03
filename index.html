@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CBB Top 25 Rankings</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 600px; }
+        h1 { text-align: center; color: #cc0000; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #333; color: white; padding: 10px; text-align: left; }
+        td { border-bottom: 1px solid #ddd; padding: 10px; }
+        input { border: none; width: 100%; font-size: 14px; background: transparent; }
+        input:focus { background: #fffde7; outline: 1px solid #ffd54f; }
+        .rank { width: 40px; font-weight: bold; }
+        .movement { width: 60px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>College Basketball Top 25</h1>
+        <p style="text-align: center; font-size: 0.9em; color: #666;">Click any field to type/update</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>Record</th>
+                    <th>+/-</th>
+                </tr>
+            </thead>
+            <tbody id="rankings-body">
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+        const body = document.getElementById('rankings-body');
+        for (let i = 1; i <= 25; i++) {
+            const row = `<tr>
+                <td class="rank">${i}</td>
+                <td><input type="text" placeholder="Team Name"></td>
+                <td><input type="text" placeholder="0-0"></td>
+                <td class="movement"><input type="text" placeholder="—"></td>
+            </tr>`;
+            body.innerHTML += row;
+        }
+    </script>
+</body>
+</html> 
